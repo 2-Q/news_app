@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:news_api/news/indexNews.dart';
-import 'package:news_api/post/indexPost.dart';
 
 void main() {
   runApp(const MyApp());

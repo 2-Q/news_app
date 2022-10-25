@@ -1,5 +1,4 @@
 class News {
-  String author;
   String title;
   String description;
   String url;
@@ -8,8 +7,7 @@ class News {
   String content;
 
   News(
-      {required this.author,
-      required this.title,
+      {required this.title,
       required this.description,
       required this.url,
       required this.urlToImage,
@@ -18,12 +16,11 @@ class News {
 
   factory News.fromJson(Map<String, dynamic> json) {
     return News(
-        author: json['author'],
-        title: json['title'],
-        description: json['description'],
-        url: json['url'],
-        urlToImage: json['urlToImage'],
-        publishedAt: json['publishedAt'],
-        content: json['content']);
+        title: json['title'] ?? 'Load data filed',
+        description: json['description'] ?? 'Load data filed',
+        url: json['url'] ?? 'Load data filed',
+        urlToImage: json['urlToImage'] ?? 'Load data filed',
+        publishedAt: json['publishedAt'] ?? 'Load data filed',
+        content: json['content'] ?? 'Load data filed');
   }
 }

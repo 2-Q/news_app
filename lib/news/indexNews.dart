@@ -4,7 +4,6 @@ import 'package:news_api/models/news.dart';
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:news_api/models/posts.dart';
 import 'package:news_api/news/cardNews.dart';
 
 class IndexNews extends StatefulWidget {
@@ -21,6 +20,7 @@ class _IndexNewsState extends State<IndexNews> {
 
     if (response.statusCode == 200) {
       var getNewsData = json.decode(response.body)['articles'] as List;
+      print(getNewsData);
       var listNews = getNewsData.map((i) => News.fromJson(i)).toList();
       return listNews;
     } else {
@@ -39,7 +39,7 @@ class _IndexNewsState extends State<IndexNews> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Post List'),
+        title: const Text('Today News'),
         centerTitle: true,
       ),
       body: SafeArea(
@@ -58,16 +58,14 @@ class _IndexNewsState extends State<IndexNews> {
                           children: [
                             CardNews(
                               news: News(
-                                title: post.title,
-                                description: post.description,
-                                url: post.url,
-                                urlToImage: post.urlToImage,
-                                publishedAt: post.publishedAt,
-                                content: post.content,
-                                author: post.author,
-                              ),
+                                  title: post.title,
+                                  description: post.description,
+                                  url: post.url,
+                                  urlToImage: post.urlToImage,
+                                  publishedAt: post.publishedAt,
+                                  content: post.content),
                             ),
-                            SizedBox(height: 20)
+                            SizedBox(height: 10)
                           ],
                         );
                       }),

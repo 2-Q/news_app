@@ -30,9 +30,6 @@ class CardNews extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(
-              height: 10,
-            ),
             Text(news.description),
           ],
         ),
