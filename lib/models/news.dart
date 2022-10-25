@@ -21,6 +21,6 @@ class News {
         url: json['url'] ?? 'Load data filed',
         urlToImage: json['urlToImage'] ?? 'Load data filed',
         publishedAt: json['publishedAt'] ?? 'Load data filed',
-        content: json['content'] ?? 'Load data filed');
+        content: json['content'] ?? 'Filed on loaded content');
   }
 }

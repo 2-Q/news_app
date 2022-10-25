@@ -20,7 +20,6 @@ class _IndexNewsState extends State<IndexNews> {
 
     if (response.statusCode == 200) {
       var getNewsData = json.decode(response.body)['articles'] as List;
-      print(getNewsData);
       var listNews = getNewsData.map((i) => News.fromJson(i)).toList();
       return listNews;
     } else {
@@ -76,7 +75,10 @@ class _IndexNewsState extends State<IndexNews> {
                 } else if (snapshot.hasError) {
                   return Text('${snapshot.error}');
                 }
-                return const CircularProgressIndicator();
+                return Container(
+                  alignment: Alignment.center,
+                  child: CircularProgressIndicator(),
+                );
               }),
         ),
       ),
