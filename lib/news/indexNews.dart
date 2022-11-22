@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:news_api/models/news.dart';
+import 'package:news_api/database/database.dart';
+import '../models/model_news.dart';
 import 'dart:async';
 import 'dart:convert';
 
@@ -32,6 +33,7 @@ class _IndexNewsState extends State<IndexNews> {
   @override
   void initState() {
     futureNews = fetchNews();
+    super.initState();
   }
 
   @override
@@ -40,6 +42,14 @@ class _IndexNewsState extends State<IndexNews> {
       appBar: AppBar(
         title: const Text('Today News'),
         centerTitle: true,
+        actions: [
+          IconButton(
+            onPressed: () {
+              DataBase.funClearData(context);
+            },
+            icon: Icon(Icons.logout),
+          )
+        ],
       ),
       body: SafeArea(
         child: Padding(
