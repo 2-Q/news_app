@@ -29,10 +29,16 @@ class DataBase {
       Navigator.pushAndRemoveUntil(
         context,
         MaterialPageRoute(
-          builder: (context) => AuthView(),
+          builder: (context) => const AuthView(),
         ),
         (route) => false,
       );
     }
+  }
+
+  static funClearData(BuildContext context) async {
+    var pref = await SharedPreferences.getInstance();
+    pref.clear();
+    funGetDB(context);
   }
 }
