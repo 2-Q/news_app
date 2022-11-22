@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:news_api/models/news.dart';
 import 'package:news_api/news/detailNews.dart';
+
+import '../models/model_news.dart';
 
 class CardNews extends StatelessWidget {
   const CardNews({Key? key, required this.news}) : super(key: key);

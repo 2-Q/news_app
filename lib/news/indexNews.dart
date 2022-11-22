@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:news_api/models/news.dart';
+import '../models/model_news.dart';
 import 'dart:async';
 import 'dart:convert';
 
@@ -32,6 +32,7 @@ class _IndexNewsState extends State<IndexNews> {
   @override
   void initState() {
     futureNews = fetchNews();
+    super.initState();
   }
 
   @override
